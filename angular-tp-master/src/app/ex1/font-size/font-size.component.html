@@ -1,0 +1,14 @@
+<div class="selector-container">
+<label for="size">Taille de police :</label>
+<div class="size-controls">
+  <input 
+    type="number" 
+    id="size" 
+    [value]="selectedSize" 
+    (input)="onSizeChange($event)" 
+    name="fontSize" 
+    min="1" 
+    max="100"> 
+  <span class="unit">px</span>
+</div>
+</div>

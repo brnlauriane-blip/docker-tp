@@ -1,0 +1,69 @@
+<app-exercice-commun
+  title="Exercice 3 : Transactions bancaires"
+  subtitle="Le but de cet exercice est d'afficher un compte-rendu de transactions bancaires. En cliquant sur la transaction désirée, des détails sont affichés."
+  iconClass="bi bi-bank text-black"
+>
+  <div class="details-container">
+    <div class="header">
+      <button class="back-button" (click)="goBack()">← Retour à la liste</button>
+      <h2>Détails de la Transaction</h2>
+      <button class="back-button" (click)="printPage()">Impression</button>
+    </div>
+
+    @if (loading) {
+    <div class="loading">
+      <div class="spinner"></div>
+      Chargement en cours
+    </div>
+    } @if (error && !loading) {
+    <div class="error">
+      <h3>Erreur</h3>
+      <p>Impossible de charger les détails de cette transaction.</p>
+      <button class="btn-primary" (click)="goBack()">← Retour à la liste</button>
+    </div>
+    } @if (transaction && !loading && !error) {
+    <div class="transaction-details">
+      <div class="detail-card">
+        <div class="card-header">
+          <h3>Transaction {{ transaction.id }}</h3>
+        </div>
+
+        <div class="card-body">
+          <div class="detail-grid">
+            <div class="detail-item">
+              <label>Date :</label>
+              <span>{{ transaction.date | date : 'dd/MM/yyyy HH:mm' : 'fr-FR' }}</span>
+            </div>
+
+            <div class="detail-item">
+              <label>Montant (€) :</label>
+              <span [class]="'amount ' + transaction.amount">
+                {{ transaction.amount }}
+              </span>
+            </div>
+
+            @if (transaction.balance !== undefined) {
+            <div class="detail-item">
+              <label>Solde après transaction (€) :</label>
+              <span class="balance">
+                {{ transaction.balance }}
+              </span>
+            </div>
+            }
+
+            <div class="detail-item">
+              <label>Catégorie :</label>
+              <span class="category">{{ transaction.label }}</span>
+            </div>
+
+            <div class="detail-item">
+              <label>Description :</label>
+              <span>{{ transaction.description }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+</app-exercice-commun>

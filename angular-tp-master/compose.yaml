@@ -1,0 +1,31 @@
+services:
+  js-backend:
+    build:
+      context: ./backend
+      dockerfile: ../backendDockerfile
+    restart: unless-stopped
+    init: true
+    ports:
+      - "3000:3000" # Exposed by backendDockerfile
+    # env_file: ./backend/.env  # Uncomment if .env file exists
+    networks:
+      - appnet
+    # The backend exposes data via port 3000
+
+  ts-root:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    init: true
+    # env_file: ./.env  # Uncomment if .env file exists
+    networks:
+      - appnet
+    # This service likely serves the frontend (Angular)
+    # If it needs to connect to js-backend, ensure proper API URLs are set
+    depends_on:
+      - js-backend
+
+networks:
+  appnet:
+    driver: bridge

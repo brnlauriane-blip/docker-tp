@@ -1,0 +1,17 @@
+<div class="selector-container">
+  <label for="font">Police :</label>
+  <select
+    id="font"
+    [value]="selectedFont"
+    (change)="onFontChange($event)"
+    name="font"
+  >
+    <option value="">Choisir</option>
+    <option value="Arial">Arial</option>
+    <option value="'Comic Sans MS'">Comic Sans MS</option>
+    <option value="Impact">Impact</option>
+    <option value="'Times New Roman'">Times New Roman</option>
+    <option value="Georgia">Georgia</option>
+  </select>
+</div>
+

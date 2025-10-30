@@ -1,0 +1,31 @@
+<app-exercice-commun
+  title="Exercice 1 : Nom et Prénom"
+  subtitle="Le but de cet exercice est de pouvoir personnaliser son nom et son prénom avec différents paramêtres tels que l'alignement, la police et encore la taille. "
+  iconClass="bi-fonts text-black"
+>
+  <h1
+    class="name-modif name-header"
+    [ngStyle]="{
+      'font-family': font,
+      'text-align': align,
+      'font-size.px': fontSize
+    }"
+  >
+    Bonjour {{ name | uppercase }} {{ firstname | uppercase }} !
+  </h1>
+
+  <h5>Personnalisez vos noms et prénoms à l'aide de différents paramètres ci-dessous :</h5>
+  <div class="settings-container name-box">
+    <p>Nom : <input [(ngModel)]="name" /></p>
+    <p>Prénom : <input [(ngModel)]="firstname"  /></p>
+
+    <app-font-selector [selectedFont]="font" (fontChange)="font = $event"> </app-font-selector>
+
+    <app-alignment-selector [selectedAlignment]="align" (alignmentChange)="align = $event">
+    </app-alignment-selector>
+
+    <app-font-size-selector [selectedSize]="fontSize" (sizeChange)="fontSize = $event">
+    </app-font-size-selector>
+  </div>
+</app-exercice-commun>
+

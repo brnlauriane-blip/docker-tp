@@ -1,0 +1,27 @@
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-success">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="navbar-nav">
+        <a routerLink="/home" class="nav-item nav-link" routerLinkActive="active">
+          <i class="bi-house-door"></i> Home
+        </a>
+        <a routerLink="/ex1" class="nav-item nav-link" routerLinkActive="active">
+          <i class="bi-fonts"></i> Exercice 1
+        </a>
+        <a routerLink="/ex2" class="nav-item nav-link" routerLinkActive="active">
+          <i class="bi-calculator"></i> Exercice 2
+        </a>
+        <a routerLink="/ex3" class="nav-item nav-link" routerLinkActive="active">
+          <i class="bi bi-bank"></i> Exercice 3
+        </a>
+      </div>
+    </div>
+    <div class="navbar-text text-white me-3">
+      {{ currentTime }}
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <router-outlet></router-outlet>
+</div>

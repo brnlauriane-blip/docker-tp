@@ -1,0 +1,55 @@
+.exercise-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8f9ff 0%, #e6f0ff 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.exercise-card {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.exercise-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.exercise-title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.exercise-icon {
+  font-size: 2rem;
+  margin-right: 0.5rem;
+}
+
+.exercise-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000000;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .exercise-container {
+    padding: 0.5rem;
+  }
+
+  .exercise-card {
+    padding: 1rem;
+  }
+
+  .exercise-title {
+    font-size: 1.25rem;
+  }
+}

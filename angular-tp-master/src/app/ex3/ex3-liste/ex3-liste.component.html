@@ -1,0 +1,51 @@
+<app-exercice-commun
+  title="Exercice 3 : Transactions bancaires"
+  subtitle="Le but de cet exercice est d'afficher un compte-rendu de transactions bancaires. 
+  En cliquant sur la transaction désirée, des détails sont affichés."
+  iconClass="bi bi-bank text-black"
+>
+  <div class="transactions-container">
+    <h2>Liste des Transactions</h2>
+
+    <div class="table-container">
+      <table class="transactions-table">
+        <thead>
+          <tr>
+            <th (click)="sortBy('id')" class="sortable">ID {{ getSortIcon('id') }}</th>
+            <th (click)="sortBy('date')" class="sortable">Date {{ getSortIcon('date') }}</th>
+            <th (click)="sortBy('amount')" class="sortable">
+              Montant (€) {{ getSortIcon('amount') }}
+            </th>
+            <th (click)="sortBy('balance')" class="sortable">
+              Solde (€) {{ getSortIcon('balance') }}
+            </th>
+            <th (click)="sortBy('label')" class="sortable">Catégorie {{ getSortIcon('label') }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (transaction of sortedTransactions; track transaction.id) {
+          <tr (click)="viewDetails(transaction)" class="transaction-row">
+            <td>{{ transaction.id }}</td>
+            <td>{{ transaction.date | date : 'dd/MM/yyyy' }}</td>
+            <td>{{ transaction.amount }}</td>
+            <td>{{ transaction.balance }}</td>
+            <td>{{ transaction.label }}</td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+
+    @if (sortedTransactions.length === 0) {
+    <div class="no-data">
+      <h3>Aucune transaction trouvée</h3>
+      <p>Vérifiez que :</p>
+      <ul>
+        <li>Le serveur Express est démarré (node server.js)</li>
+        <li>L'URL http://localhost:3000/api/transactions fonctionne</li>
+        <li>La console du navigateur (F12) pour les erreurs</li>
+      </ul>
+    </div>
+    }
+  </div>
+</app-exercice-commun>

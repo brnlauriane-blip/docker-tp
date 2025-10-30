@@ -1,0 +1,23 @@
+<div class="selector-container">
+<label for="align">Alignement :</label>
+  <label>
+    <input type="radio" name="align" value="left"
+           [checked]="selectedAlignment === 'left'"
+           (change)="onAlignmentChange($event)">
+    Gauche
+  </label>
+
+  <label>
+    <input type="radio" name="align" value="center"
+           [checked]="selectedAlignment === 'center'"
+           (change)="onAlignmentChange($event)">
+    Centré
+  </label>
+
+  <label>
+    <input type="radio" name="align" value="right"
+           [checked]="selectedAlignment === 'right'"
+           (change)="onAlignmentChange($event)">
+    Droite
+  </label>
+</div>

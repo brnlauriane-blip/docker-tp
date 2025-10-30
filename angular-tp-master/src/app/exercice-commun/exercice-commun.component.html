@@ -1,0 +1,19 @@
+<!--J'ai créé ce dossier exercice-commun dans le but d'alléger les fichers HTML des exercices 
+car tous les exos ont une partie de code commun. Je ne l'ai pas mis dans le app.component car 
+le homepage n'a pas tout à fait le même début de code.-->
+
+<div class="exercise-container">
+  <div class="exercise-card">
+    <header class="exercise-header">
+      <div class="exercise-title-container">
+        <i [class]="iconClass + ' exercise-icon'"></i>
+        <h1 class="exercise-title">{{ title }}</h1>
+      </div>
+      @if (subtitle) {
+      <p class="text-muted">{{ subtitle }}</p>
+      }
+    </header>
+
+    <ng-content></ng-content>
+  </div>
+</div>

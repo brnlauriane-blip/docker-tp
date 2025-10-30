@@ -1,0 +1,110 @@
+<app-exercice-commun
+  title="Exercice 2 : Calculatrice"
+  subtitle="Le but de cet exercice est de calculer différentes opérations simples."
+  iconClass="bi-calculator text-black"
+>
+  <main>
+    <section class="d-flex flex-wrap gap-3 mb-4 justify-content-center">
+      <div class="text-center">
+        <label class="form-label fw-bold">Premier nombre</label>
+        <input
+          type="text"
+          [value]="number1()"
+          (input)="onNumberChange($event, 'number1')"
+          placeholder="Nombre"
+          class="form-control text-center"
+          style="width: 120px"
+        />
+      </div>
+
+      <div class="text-center">
+        <label class="form-label fw-bold " style="visibility: hidden">Opération</label>
+        <select
+          [value]="operation()"
+          (change)="onOperationChange($event)"
+          class="form-select text-center"
+          style="width: 80px"
+        >
+          <option value="+">+</option>
+          <option value="-">-</option>
+          <option value="×">×</option>
+          <option value="÷">÷</option>
+        </select>
+      </div>
+
+      <div class="text-center">
+        <label class="form-label fw-bold">Deuxième nombre</label>
+        <input
+          type="text"
+          [value]="number2()"
+          (input)="onNumberChange($event, 'number2')"
+          placeholder="Nombre"
+          class="form-control text-center"
+          style="width: 120px"
+        />
+      </div>
+
+      <div class="text-center">
+        <div class="form-label fw-bold" style="visibility: hidden">=</div>
+        <button
+          (click)="calculate()"
+          class="btn btn-outline-secondary fw-bold"
+          style="width: 40px; height: 38px"
+        >
+          =
+        </button>
+      </div>
+
+      <div class="text-center">
+        <label class="form-label fw-bold">Résultat</label>
+        <div class="border border-success rounded text-center p-2" style="width: 150px; min-height: 38px">
+          {{ result() !== null ? formatResult(result()!) : '' }}
+        </div>
+      </div>
+    </section>
+
+    @if (showDivisionWarning()) {
+    <div class="alert alert-danger text-center">Division par zéro impossible</div>
+    }
+
+    <section class="mt-4 table">
+      <div class="card">
+        <div class="h4 card-header history-header">Historique des opérations</div>
+        <div class="card-body p-0">
+          @if (operations().length === 0) {
+          <div class="text-center py-5 text-muted">Aucun résultat pour le moment</div>
+          } @else {
+          <table class="table table-hover mb-0">
+            <thead class="table-light">
+              <tr>
+                <th>#</th>
+                <th>Heure</th>
+                <th>Opération</th>
+                <th>Résultat</th>
+                <th>Supprimer</th>
+              </tr>
+            </thead>
+            <tbody>
+              @for (op of operations(); track op.id; let i = $index) {
+              <tr>
+                <td>{{ i + 1 }}</td>
+                <td>{{ op.date | date : 'H:mm' }}</td>
+                <td>
+                  {{ formatResult(op.number1) }} {{ op.operation }} {{ formatResult(op.number2) }}
+                </td>
+                <td>{{ formatResult(op.result) }}</td>
+                <td>
+                  <button (click)="deleteOperation(op.id)" class="btn btn-sm btn-outline-danger">
+                    <i class="bi-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              }
+            </tbody>
+          </table>
+          }
+        </div>
+      </div>
+    </section>
+  </main>
+</app-exercice-commun>

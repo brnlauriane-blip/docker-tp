@@ -1,0 +1,16 @@
+.selector-container {
+  margin-bottom: 15px;
+}
+
+label {
+  display: inline-block;
+  min-width: 120px;
+  font-weight: bold;
+}
+
+select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}

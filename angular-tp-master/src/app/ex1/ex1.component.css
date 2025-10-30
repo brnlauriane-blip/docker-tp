@@ -1,0 +1,30 @@
+.settings-container {
+  background-color: #fffad8;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+  max-width: 550px;
+}
+
+input {
+  padding: 8px;
+  border: 1px solid #cccccc5d;
+  border-radius: 4px;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.name-modif {
+  margin: 20px 0;
+  padding: 15px;
+  background-color: #fff198;
+  border-radius: 5px;
+}
+
+.name-header {
+  background: #8acda1;
+}
+
+.name-box {
+  background-color: #aeceb9;
+}
