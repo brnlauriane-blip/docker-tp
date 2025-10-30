@@ -1,0 +1,35 @@
+<accounts>
+    <account>
+    <type></type>
+    <accountNumber></accountNumber>
+    <balance></balance>
+        <client>
+            <clientNumber>1</clientNumber>
+            <lastName>Durand</lastName>
+            <firstName>Brendan</firstName>
+        </client>
+    </account>
+
+    <account>
+    <type></type>
+    <accountNumber></accountNumber>
+    <balance></balance>
+        <client>
+            <clientNumber>2</clientNumber>
+            <lastName>Martin</lastName>
+            <firstName>Michele</firstName>
+        </client>
+    </account>
+
+    <account>
+    <type></type>
+    <accountNumber></accountNumber>
+    <balance></balance>
+        <client>
+            <clientNumber>3</clientNumber>
+            <lastName>Dupont</lastName>
+            <firstName>Lizzie</firstName>
+        </client>
+    </account>
+
+</accounts>

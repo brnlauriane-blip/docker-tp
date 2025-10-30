@@ -1,0 +1,9 @@
+services:
+  java-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: java-app:latest
+    container_name: java-java-app
+    restart: unless-stopped
+    init: true

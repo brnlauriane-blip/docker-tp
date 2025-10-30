@@ -1,0 +1,71 @@
+# Version control
+.git/
+.gitignore
+.svn/
+.hg/
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Java build outputs
+/target/
+*.class
+
+# Other build outputs
+build/
+dist/
+out/
+
+# Test directories and files
+src/test/
+test/
+tests/
+
+# Debug and log files
+*.log
+debug/
+
+# Environment and secrets
+.env*
+*.env
+*.pem
+*.key
+*.crt
+config.local.*
+*.local.yml
+
+# Documentation
+/docs/
+*.md
+README*
+
+# Temporary and local files
+tmp/
+temp/
+*.tmp
+.local/
+local/
+
+# Docker and compose files
+Dockerfile*
+docker-compose*
+
+# Node.js (for completeness, not detected in this project)
+node_modules/
+npm-debug.log
+yarn-debug.log
+
+# Python (for completeness, not detected in this project)
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.coverage
+
+# Go (for completeness, not detected in this project)
+/vendor/
+*.test
+.go-cache/

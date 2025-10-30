@@ -1,0 +1,40 @@
+[
+  {
+    "type": "Debit",
+    "comment": "Internet",
+    "amount": 29.99,
+    "targetAccountNumber": 1
+  },
+  {
+    "type": "Credit",
+    "comment": "Impot",
+    "amount": 134.28,
+    "targetAccountNumber": 5
+  },
+  {
+    "type": "Transfer",
+    "comment": "Savings",
+    "amount": 750,
+    "issuerAccountNumber": 3,
+    "targetAccountNumber": 4
+  },
+  {
+    "type": "Debit",
+    "amount": 164.85,
+    "comment": "Shopping",
+    "targetAccountNumber": 1
+  },
+  {
+    "type": "Transfer",
+    "amount": 174.23,
+    "comment": "Refund",
+    "issuerAccountNumber": 5,
+    "targetAccountNumber": 1
+  },
+  {
+    "type": "Debit",
+    "amount": 19.99,
+    "comment": "Forfait mobile",
+    "targetAccountNumber": 5
+  }
+]
